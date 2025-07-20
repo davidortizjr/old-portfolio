@@ -1,0 +1,53 @@
+body {
+  background: rgb(250, 235, 221);
+  font-family: Montserrat;
+}
+
+.categories {
+  margin-top: 15rem;
+}
+
+.categories a,
+p {
+  text-decoration: none;
+  color: rgb(66, 65, 65);
+  font-weight: bold;
+  font-size: 5rem;
+}
+
+.categories a:hover {
+  backdrop-filter: blur(5px);
+  border-radius: 16px;
+}
+
+.categories p:hover {
+  color: #000000;
+}
+
+.background-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  opacity: 0;
+  transition: opacity .6s ease-in-out;
+  z-index: -1;
+}
+
+@media only screen and (max-width: 600px) {
+  .categories a,
+  p {
+    font-size: 3rem;
+  }
+}
+
+@media only screen and (max-width: 400px) {
+  .categories a,
+  p {
+    font-size: 2rem;
+  }
+}
