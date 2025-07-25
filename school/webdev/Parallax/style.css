@@ -12,8 +12,7 @@ body {
 }
 
 .main-content {
-    padding: 50px 0;
-    overflow-x: hidden;
+    overflow: hidden;
 }
 
 .section-desc h1,
@@ -77,6 +76,7 @@ img.img-fluid {
     img.img-fluid {
         max-width: 90%;
     }
+
     .stills-container img {
         max-width: 400px;
     }
@@ -86,6 +86,7 @@ img.img-fluid {
     img.img-fluid {
         max-width: 95%;
     }
+
     .stills-container img {
         max-width: 100%;
     }
