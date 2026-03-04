@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>RepTrack Fitness Dashboard</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&amp;display=swap" rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#9d2f2f",
+                        "background-light": "#f8f6f6",
+                        "background-dark": "#140c0c",
+                        "card-dark": "#1f1414",
+                    },
+                    fontFamily: {
+                        "display": ["Lexend", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "1rem",
+                        "lg": "2rem",
+                        "xl": "3rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+    <style>
+        body {
+            font-family: 'Lexend', sans-serif;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        .hide-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+
+        .hide-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+    </style>
+    <style>
+        body {
+            min-height: max(884px, 100dvh);
+        }
+    </style>
+</head>
+
+<body class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-white min-h-screen pb-32">
+    <!-- Top App Bar -->
+    <header
+        class="sticky top-0 z-50 bg-background-light/80 dark:bg-background-dark/80 backdrop-blur-md px-6 py-4 flex items-center justify-between">
+        <div class="flex items-center gap-3">
+            <div class="bg-primary p-2 rounded-full flex items-center justify-center">
+                <span class="material-symbols-outlined text-white text-2xl">fitness_center</span>
+            </div>
+            <h1 class="text-xl font-bold tracking-tight">RepTrack</h1>
+        </div>
+        <div class="flex items-center gap-4">
+            <button class="w-10 h-10 rounded-full bg-slate-200 dark:bg-card-dark flex items-center justify-center">
+                <span class="material-symbols-outlined text-xl">notifications</span>
+            </button>
+            <button class="w-10 h-10 rounded-full border-2 border-primary overflow-hidden">
+                <img class="w-full h-full object-cover" data-alt="Profile picture of a fitness athlete"
+                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuAjx8WjcjNGPCUV1Yc9UXaix29xKJ9lvW80WgBZfIzz43UQoCyDtRcXJX-xNjB0f__atmDadqxTL89Ly_-qo3Rh3CYl6irHBWNyKbxD_UVcccsRJjCE69HnLXidHmZn787Xc8TC6pcgrZi_gL0N16SkkZGNUldcjbWWbDq_EdTxdR4X-AA9yg7l7It4ZpGqkYMJNEvGiMMoiBzuGBx8NSFwo0-mdrgZZJQEWFhzScgISBYbIw3IN_CbAKr5YlHHQNuNcniPhjZyCEFJ" />
+            </button>
+        </div>
+    </header>
+    <main class="px-6 space-y-8 mt-4">
+        <!-- Progress Section -->
+        <section>
+            <div class="flex items-center justify-between mb-4">
+                <h3 class="text-sm font-bold uppercase tracking-widest text-slate-500 dark:text-slate-400">Your Progress
+                </h3>
+                <span class="material-symbols-outlined text-primary">trending_up</span>
+            </div>
+            <div class="grid grid-cols-2 gap-4">
+                <div
+                    class="bg-white dark:bg-card-dark p-6 rounded-xl shadow-sm border border-slate-100 dark:border-white/5 flex flex-col gap-1">
+                    <p class="text-xs font-medium text-slate-400 uppercase">Last Workout</p>
+                    <p class="text-2xl font-bold text-primary">Legs</p>
+                    <p class="text-[10px] text-slate-400">2 days ago</p>
+                </div>
+                <div
+                    class="bg-white dark:bg-card-dark p-6 rounded-xl shadow-sm border border-slate-100 dark:border-white/5 flex flex-col gap-1">
+                    <p class="text-xs font-medium text-slate-400 uppercase">Total Workouts</p>
+                    <div class="flex items-baseline gap-1">
+                        <p class="text-2xl font-bold">12</p>
+                        <span class="material-symbols-outlined text-sm text-yellow-500"
+                            style="font-variation-settings: 'FILL' 1">stars</span>
+                    </div>
+                    <p class="text-[10px] text-slate-400">Level 2 Athlete</p>
+                </div>
+            </div>
+        </section>
+        <!-- Program Selection -->
+        <section class="space-y-4">
+            <h3 class="text-sm font-bold uppercase tracking-widest text-slate-500 dark:text-slate-400">Select Your
+                Program</h3>
+            <!-- Push Card -->
+            <div class="relative w-full h-48 rounded-xl overflow-hidden group">
+                <div class="absolute inset-0 bg-cover bg-center transition-transform duration-500 group-hover:scale-110"
+                    data-alt="Person performing a heavy dumbbell bench press"
+                    style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDTVP2Qc05J07wlkn-VRbAr_yMZiSsOUC3DHjgr2O1LfXW4dpNVct5SNLgu6oBGEDejszt4n0FICNqWrN5MdxwK9-KwSkNWGuN71ZBma-YApwck2fx9EOGhAdRa5fezw0S7R3HvoksZhd4aIH2bwsWzB_XKdMSwEhUodmAauZ04EyENqO4ZIYiP1xCuAytxFOz7238GkmxQhShcu0_UzUibJvU6H9dAdPDCfSZp21FOM5PSaHSIxSud5MoLWcAqqsEixCoaAGs6b1ur');">
+                </div>
+                <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent"></div>
+                <div class="absolute bottom-0 left-0 right-0 p-6 flex justify-between items-end">
+                    <div>
+                        <h4 class="text-2xl font-bold text-white tracking-tight">PUSH</h4>
+                        <p class="text-white/70 text-sm">Chest, Shoulders &amp; Triceps</p>
+                    </div>
+                    <button
+                        class="bg-primary hover:bg-primary/90 text-white px-6 py-2 rounded-full font-bold text-sm tracking-wide transition-all active:scale-95 shadow-lg shadow-primary/30">
+                        TRAIN
+                    </button>
+                </div>
+            </div>
+            <!-- Pull Card -->
+            <div class="relative w-full h-48 rounded-xl overflow-hidden group">
+                <div class="absolute inset-0 bg-cover bg-center transition-transform duration-500 group-hover:scale-110"
+                    data-alt="Close up of a person doing barbell rows in a gym"
+                    style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuC-3p9yEiQvJ9rpFSfbUO70qdvLYMKpVXx-oUZtjvVtTgs73JpybV3x-gI-ywFlFAmgwAOVmUos8ZWAOtK95Plnta36NWrvD_ZZUwwY_YFKRxZG4zcom-fq2rIcstKWleRMvUtGJsL0E2dxOLMXra8LxSqFP7EQW0C7A4vf5iTQmMXm3DgYjBRKNHaEbGvSs4H_OcOLGiGIm-3Vmt7sf1lViEydb3BWyNqyhSsWezawe28huCAw1gyf2iv_ljqRyzzXKvM88LcBPNTy');">
+                </div>
+                <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent"></div>
+                <div class="absolute bottom-0 left-0 right-0 p-6 flex justify-between items-end">
+                    <div>
+                        <h4 class="text-2xl font-bold text-white tracking-tight">PULL</h4>
+                        <p class="text-white/70 text-sm">Back, Biceps &amp; Rear Delts</p>
+                    </div>
+                    <button
+                        class="bg-primary hover:bg-primary/90 text-white px-6 py-2 rounded-full font-bold text-sm tracking-wide transition-all active:scale-95 shadow-lg shadow-primary/30">
+                        TRAIN
+                    </button>
+                </div>
+            </div>
+            <!-- Legs Card -->
+            <div class="relative w-full h-48 rounded-xl overflow-hidden group">
+                <div class="absolute inset-0 bg-cover bg-center transition-transform duration-500 group-hover:scale-110"
+                    data-alt="Heavy barbell squat rack in a modern gym"
+                    style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCt-SdIj0jCDrnwEttaDdeH2vju_RBb2H_SkkyTTHyY19k5Roc-VglQoBWpJSVT9RKRZ2ZEii0QXUykxfLtm143HTAOVOEy2a536ZSzBtvM9p4iTvXGS_nbs5iaj3dIbDOmgbgaNXjW5WVWSUThd94mAHeBUC757NXRj1vgfPyZ-6Ea6Bjonv5h-Ti110up83ftWSOn_j4DruZtth01hOwlGDa0DggvEGlFIrprpvxFVmj44kElPumdFozpRToVMye0-iHldvYYj5we');">
+                </div>
+                <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent"></div>
+                <div class="absolute bottom-0 left-0 right-0 p-6 flex justify-between items-end">
+                    <div>
+                        <h4 class="text-2xl font-bold text-white tracking-tight">LEGS</h4>
+                        <p class="text-white/70 text-sm">Quads, Hams, Glutes &amp; Calves</p>
+                    </div>
+                    <button
+                        class="bg-primary hover:bg-primary/90 text-white px-6 py-2 rounded-full font-bold text-sm tracking-wide transition-all active:scale-95 shadow-lg shadow-primary/30">
+                        TRAIN
+                    </button>
+                </div>
+            </div>
+        </section>
+        <!-- Custom Workout Option -->
+        <section>
+            <button
+                class="w-full bg-white dark:bg-card-dark border-2 border-dashed border-slate-200 dark:border-white/10 p-6 rounded-xl flex items-center justify-center gap-3 group active:bg-slate-50 dark:active:bg-white/5 transition-colors">
+                <span
+                    class="material-symbols-outlined text-primary group-hover:scale-110 transition-transform">add_circle</span>
+                <span class="font-bold text-slate-600 dark:text-slate-300">CUSTOM WORKOUT</span>
+            </button>
+        </section>
+    </main>
+
+</body>
+
+</html>

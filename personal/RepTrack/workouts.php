@@ -2,6 +2,8 @@
 include('database/connect.php');
 session_start();
 
+$page = 'workouts';
+
 $programMap = [
     'PUSH PROGRAM' => 1,
     'PULL PROGRAM' => 2,
@@ -45,19 +47,12 @@ $exerciseResult = executeQuery($exerciseQuery);
 </head>
 
 <body>
-    <nav class="red p-4 text-white font-semibold rounded-bottom-4">
-        <div class="row">
-            <div class="col">
-                <div class="fw-semibold">
-                    <?php echo $_SESSION['program']; ?>
-                </div>
-            </div>
-            <div class="col d-flex justify-content-end gap-2">
-                <i class="bi bi-gear-wide-connected"></i>
-                <i class="bi bi-person"></i>
-            </div>
-        </div>
-    </nav>
+
+    <?php include('assets/modular/navbar.php'); ?>
+
+    <div class="container mt-4 d-flex justify-content-start">
+        <a href="home_page.php" class="btn btn-outline-danger"><i class="bi bi-caret-left-fill"></i></a>
+    </div>
 
     <div class="container mt-5">
         <div class="row">
@@ -67,10 +62,31 @@ $exerciseResult = executeQuery($exerciseQuery);
                     ?>
                     <div class="col-md-4">
                         <div class="card mb-3">
+                            <h5 class="card-title ps-3 pt-2">
+                                <?php echo $exercise['exercise_name']; ?>
+                            </h5>
                             <div class="card-body">
-                                <h5 class="card-title">
-                                    <?php echo $exercise['exercise_name']; ?>
-                                </h5>
+                                <form action="submit_workout.php" method="POST">
+                                    <div class="row">
+                                        <div class="col">
+                                            <label for="sets" class="form-label">Sets</label>
+                                            <input type="number" class="form-control" id="sets" name="sets">
+                                        </div>
+                                        <div class="col-2 d-flex align-items-center justify-content-center mt-4">
+                                            x
+                                        </div>
+                                        <div class="col">
+                                            <label for="reps" class="form-label">Reps</label>
+                                            <input type="number" class="form-control" id="reps" name="reps">
+                                        </div>
+                                    </div>
+                                    <div class="row mt-2">
+                                        <div class="col">
+                                            <label for="weight" class="form-label">Weight (kg)</label>
+                                            <input type="number" class="form-control" id="weight" name="weight">
+                                        </div>
+                                    </div>
+                                </form>
                             </div>
                         </div>
                     </div>

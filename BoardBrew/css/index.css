@@ -1,18 +1,18 @@
 @font-face {
     font-family: 'Gotham';
-    src: url('font/Gotham.otf') format('opentype');
+    src: url('../font/Gotham.otf') format('opentype');
 }
 
 @font-face {
     font-family: 'GothamBold';
-    src: url('font/GOTHAM-BOLD.ttf') format('truetype');
+    src: url('../font/GOTHAM-BOLD.ttf') format('truetype');
     font-weight: normal;
     font-style: normal;
 }
 
 @font-face {
     font-family: 'Hertical';
-    src: url('font/Hertical Sans.ttf') format('truetype');
+    src: url('../font/Hertical Sans.ttf') format('truetype');
     font-weight: normal;
     font-style: normal;
 }
@@ -39,10 +39,6 @@
     font-family: var(--ff-text);
 }
 
-.navbar-shadow {
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-}
-
 .nav-link.active {
     color: var(--fc-brown) !important;
 }
@@ -56,16 +52,12 @@ a {
 .tagline {
     font-family: var(--ff-text);
     color: var(--fc-brown);
-    backdrop-filter: blur(2px);
     display: inline-block;
     padding: 8px 16px;
     border-radius: 8px;
     margin: 0 auto;
 }
 
-.card {
-    border-radius: 0;
-}
 
 label.form-label {
     font-family: var(--ff-text);
@@ -109,8 +101,6 @@ footer {
     gap: 35px;
     border-radius: 15px;
     background: #e3e3e3;
-    box-shadow: 16px 16px 32px #c8c8c8,
-        -16px -16px 32px #fefefe;
     border-radius: 8px;
 }
 
@@ -216,4 +206,9 @@ footer {
     .inputBox1 span {
         margin-left: 4px !important;
     }
+
+    .card {
+        width: auto;
+    }
+
 }
